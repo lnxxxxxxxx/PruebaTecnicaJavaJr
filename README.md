@@ -27,6 +27,7 @@
      - Actualizar productos: *PUT* /productos/{id o nombre del producto}
      - Buscar productos: *GET* /productos/{id o nombre del producto}
      - Borrar productos: *DELETE* /productos/{id o nombre del producto}
+     - Buscar productos ordenados de menor a mayor por *precio*: *GET* /productos/ordenados
      
      
 
