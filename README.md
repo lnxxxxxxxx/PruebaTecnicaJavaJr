@@ -38,11 +38,11 @@
   2. Agregar capa DTO, Mapper. ✅
   
   - Puntos adicionales que agregue por mi cuenta:
-    - Validaciones para no repetir nombre o id al crear
-    - Eliminar o actualizar el producto por id o nombre
-    - Interface para la capa Service
+    - Validaciones para no repetir nombre o id al crear.
+    - Eliminar o actualizar el producto por id o nombre.
+    - Interface para la capa Service.
     - Indentancion en el codigo.
-    - Inyeccion de dependencias
+    - Inyeccion de dependencias.
 
 
  **Ambas ya estan agregadas y los puntos adicionales tambien, el proyecto lo di por finalizado temporalmente.**
