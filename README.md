@@ -21,12 +21,27 @@
   2. Abrelo en Intellij IDEA, corre springboot:maven:run.
   
   3. Abre Postman, utiliza los endpoints y sus metodos GET,POST,PUT,DELETE.
+   - Endpoint:
+     - Buscar todos los productos: *GET* /productos 
+     - Crear productos: *POST* /productos
+     - Actualizar productos: *PUT* /productos/{id o nombre del producto}
+     - Buscar productos: *GET* /productos/{id o nombre del producto}
+     - Borrar productos: *DELETE* /productos/{id o nombre del producto}
+     
+     
 
 
 ## 🔎 Feedback de la empresa 
   La empresa me dio unas consignas para mejorar el api restful a tener en cuenta mas alla de su consigna enviada por email.
   1. Agregar capa service. ✅
   2. Agregar capa DTO, Mapper. ✅
+  
+  - Puntos adicionales que agregue:
+    - Validaciones para no repetir nombre o id al crear
+    - Eliminar o actualizar el producto por id o nombre
+    - Interface para la capa Service
+    - Indentancion en el codigo.
+    - Inyeccion de dependencias
 
 
  **Ambas ya estan agregadas y el proyecto lo di por finalizado.**
