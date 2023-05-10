@@ -44,6 +44,6 @@
     - Inyeccion de dependencias
 
 
- **Ambas ya estan agregadas y el proyecto lo di por finalizado.**
+ **Ambas ya estan agregadas y los puntos adicionales tambien, el proyecto lo di por finalizado temporalmente.**
 
 
