@@ -36,7 +36,7 @@
   1. Agregar capa service. ✅
   2. Agregar capa DTO, Mapper. ✅
   
-  - Puntos adicionales que agregue:
+  - Puntos adicionales que agregue por mi cuenta:
     - Validaciones para no repetir nombre o id al crear
     - Eliminar o actualizar el producto por id o nombre
     - Interface para la capa Service
