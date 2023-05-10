@@ -21,7 +21,7 @@
   2. Abrelo en Intellij IDEA, corre springboot:maven:run.
   
   3. Abre Postman, utiliza los endpoints y sus metodos GET,POST,PUT,DELETE.
-   - Endpoint:
+   - Endpoints:
      - Buscar todos los productos: *GET* /productos 
      - Crear productos: *POST* /productos
      - Actualizar productos: *PUT* /productos/{id o nombre del producto}
