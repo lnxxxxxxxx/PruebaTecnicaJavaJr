@@ -14,4 +14,6 @@ import java.util.stream.DoubleStream;
 @Repository
 public interface ProductosRepository extends JpaRepository<Productos, Long> {
     Optional<Productos> findByNombre(String nombre);
+
+    Optional<Productos> findByIdOrNombre(Long id, String nombre);
 }

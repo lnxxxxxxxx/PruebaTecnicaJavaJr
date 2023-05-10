@@ -2,11 +2,11 @@ package com.example.PruebaTecnica.Controller;
 
 
 import com.example.PruebaTecnica.DTO.ProductosDTO;
+import com.example.PruebaTecnica.Mapper.ProductosMapper;
 import com.example.PruebaTecnica.Model.Productos;
-import com.example.PruebaTecnica.Repository.ProductosRepository;
-import com.example.PruebaTecnica.Service.ProductosService;
+import com.example.PruebaTecnica.Service.iProductosService;
+import com.example.PruebaTecnica.Service.impl.ProductosService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,44 +16,67 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/productos")
 public class ProductosController {
 
     @Autowired
-    private ProductosService productosService;
+    private iProductosService productosService;
 
     @PostMapping
-    public ResponseEntity<ProductosDTO> crearProducto(@RequestBody ProductosDTO productosDTO) {
-        ProductosDTO createdProducto = productosService.crearProducto(productosDTO);
-        return new ResponseEntity<>(createdProducto, HttpStatus.CREATED);
+    public ResponseEntity<ProductosDTO> createProducto(@RequestBody ProductosDTO productosDTO) {
+        try {
+            ProductosDTO productoCreado = productosService.createProducto(productosDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body(productoCreado);
+        } catch (RuntimeException ex) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductosDTO> obtenerProducto(@PathVariable Long id) {
-        ProductosDTO productoDTO = productosService.obtenerProducto(id);
-        if (productoDTO != null) {
+    @GetMapping
+    public ResponseEntity<List<ProductosDTO>> getProductos() {
+        List<ProductosDTO> productosDtoList = productosService.getProductos();
+        return new ResponseEntity<>(productosDtoList, HttpStatus.OK);
+    }
+
+    @GetMapping("/ordenados")
+    public ResponseEntity<List<Productos>> getAllProductosOrderByPrecio() {
+        List<Productos> productos = productosService.findAllOrderByPrecio();
+        return new ResponseEntity<>(productos, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/{idOuNombre}")
+    public ResponseEntity<ProductosDTO> buscarProductoPorIdOuNombre(@PathVariable String idOuNombre) {
+        Optional<Productos> producto = null;
+
+        try {
+            Long id = Long.parseLong(idOuNombre);
+            producto = productosService.findByIdOrNombre(id, null);
+        } catch (NumberFormatException e) {
+            producto = productosService.findByIdOrNombre(null, idOuNombre);
+        }
+
+        if (producto.isPresent()) {
+            ProductosDTO productoDTO = ProductosMapper.toDto(producto.get());
             return ResponseEntity.ok(productoDTO);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
+    @PutMapping("/{idOuNombre}")
+    public ProductosDTO updateProductoByIdOrNombre(@PathVariable String idOuNombre, @RequestBody ProductosDTO productosDTO) {
+        return productosService.updateProductoByIdOrNombre(idOuNombre, productosDTO);
+    }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<ProductosDTO> actualizarProducto(@PathVariable Long id, @RequestBody ProductosDTO productosDTO) {
-        ProductosDTO updatedProducto = productosService.actualizarProducto(id, productosDTO);
-        if (updatedProducto != null) {
-            return ResponseEntity.ok(updatedProducto);
+    @DeleteMapping("/{idOuNombre}")
+    public ResponseEntity<String> deleteProducto(@PathVariable String idOuNombre) {
+        boolean eliminado = productosService.deleteProducto(idOuNombre);
+        if (eliminado) {
+            return ResponseEntity.ok().body("Producto eliminado exitosamente");
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> borrarProducto(@PathVariable Long id) {
-        productosService.borrarProducto(id);
-        return ResponseEntity.noContent().build();
-    }
-
 
 
 
