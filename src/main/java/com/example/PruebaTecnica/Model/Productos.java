@@ -12,23 +12,22 @@ import lombok.*;
 @Table(name = "productos")
 public class Productos {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_producto")
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id_producto")
+  private Long id;
 
-    @Column(name = "nombre")
-    private String nombre;
+  @Column(name = "nombre")
+  private String nombre;
 
-    @Column(name = "descripcion")
-    private String descripcion;
+  @Column(name = "descripcion")
+  private String descripcion;
 
-    @Column(name = "precio")
-    private float precio;
+  @Column(name = "precio")
+  private float precio;
 
-    @Column(name = "cantidad")
-    private int cantidad;
-
+  @Column(name = "cantidad")
+  private int cantidad;
 
 
 }

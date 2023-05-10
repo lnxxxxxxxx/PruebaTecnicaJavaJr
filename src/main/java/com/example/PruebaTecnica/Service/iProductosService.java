@@ -9,19 +9,19 @@ import java.util.Optional;
 
 public interface iProductosService {
 
-        List<ProductosDTO> getProductos();
+  List<ProductosDTO> getProductos();
 
-        List<Productos> findAllOrderByPrecio();
+  List<Productos> findAllOrderByPrecio();
 
-        Optional<Productos> findByIdOrNombre(Long id, String nombre);
+  Optional<Productos> findByIdOrNombre(Long id, String nombre);
 
-        ProductosDTO getProductoById(Long id);
+  ProductosDTO getProductoById(Long id);
 
-        ProductosDTO createProducto(ProductosDTO productosDTO);
+  ProductosDTO createProducto(ProductosDTO productosDTO);
 
-        ProductosDTO updateProductoByIdOrNombre(String idOuNombre, ProductosDTO productosDTO);
+  ProductosDTO updateProductoByIdOrNombre(String idOuNombre, ProductosDTO productosDTO);
 
-        boolean deleteProducto(String idOuNombre);
+  boolean deleteProducto(String idOuNombre);
 }
 
 

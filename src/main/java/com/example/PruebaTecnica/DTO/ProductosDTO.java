@@ -1,4 +1,5 @@
 package com.example.PruebaTecnica.DTO;
+
 import lombok.*;
 
 
@@ -8,11 +9,11 @@ import lombok.*;
 @NoArgsConstructor
 public class ProductosDTO {
 
-        private Long id;
-        private String nombre;
-        private String descripcion;
-        private float precio;
-        private int cantidad;
+  private Long id;
+  private String nombre;
+  private String descripcion;
+  private float precio;
+  private int cantidad;
 
 
 }
