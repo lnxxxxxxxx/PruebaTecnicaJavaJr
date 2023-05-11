@@ -1,4 +1,4 @@
-# 💻 Prueba tecnica JAVA JR [PAYGOAL](https://www.paygoal.com.ar/)
+# 💻 Prueba tecnica JAVA JR 
 
   Esta fue una prueba tecnica para JAVA JR para la empresa **[PAYGOAL](https://www.paygoal.com.ar/)**
   
@@ -45,6 +45,5 @@
     - Inyeccion de dependencias.
 
 
- **Ambas ya estan agregadas y los puntos adicionales tambien, el proyecto lo di por finalizado temporalmente.**
 
 
