@@ -1,6 +1,6 @@
 # 💻 Prueba tecnica JAVA 
 
-  Esta fue una prueba tecnica para JAVA para la empresa **[PAYGOAL](https://www.paygoal.com.ar/)**
+  Esta fue una prueba tecnica para JAVA para la empresa **[ANONIMA](https://ww.paygoal.com.ar/)**
   
 ## 📋 Consigna
 ![asd](./1.png)
